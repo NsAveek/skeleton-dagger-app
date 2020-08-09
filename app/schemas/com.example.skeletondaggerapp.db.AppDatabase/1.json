@@ -2,10 +2,10 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "0afe4808c6a79c12a79bab9448325c4f",
+    "identityHash": "5faab9aace69664242b56f72becb7db1",
     "entities": [
       {
-        "tableName": "WeatherModel",
+        "tableName": "DemoRoomObjectModel",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` TEXT NOT NULL, `name` TEXT, PRIMARY KEY(`uid`))",
         "fields": [
           {
@@ -15,7 +15,7 @@
             "notNull": true
           },
           {
-            "fieldPath": "cityName",
+            "fieldPath": "name",
             "columnName": "name",
             "affinity": "TEXT",
             "notNull": false
@@ -33,7 +33,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"0afe4808c6a79c12a79bab9448325c4f\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"5faab9aace69664242b56f72becb7db1\")"
     ]
   }
 }
