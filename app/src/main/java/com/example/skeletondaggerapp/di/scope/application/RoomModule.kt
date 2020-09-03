@@ -21,6 +21,14 @@ class RoomModule {
     }
     @Provides
     @Singleton
+    fun provideRoomDatabaseWithPreloadedDB(applicationContext : Application) : AppDatabase {
+
+        return Room.databaseBuilder(
+            applicationContext,AppDatabase::class.java,"preloaded_database.db"
+        ).createFromAsset("preloaded_data.db").build()
+    }
+    @Provides
+    @Singleton
     fun provideWeatherDao(database: AppDatabase) : DemoDAO {
         return database.demoDao()
     }
